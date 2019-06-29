@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<h4>
+Binary 2 Dec converter
+</h4>
+<form>
+<input type="number" id="bin"/>
+<input type="button" value="convert" onclick="bin2dec()"/>
+</form>
+<script type="text/javascript">
+   function bin2dec(){
+       var bin=document.grtElementById('bin').value;
+    var decimal=0;
+    for(var i=bin.length-1;i>=0;i--){
+        decimal += Math.pow(2,bin.length-1-i);
+    }
+    return(decimal); 
+   }
+   document.write(decimal);
+</script>
+</body>
+</html>
+<script type="text/javascript">
+    if(num!=0 || num!=1){
+        alert('please enter binary digits only');
+    }
+    </script>
