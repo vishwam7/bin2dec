@@ -1,29 +1,40 @@
 <html>
-<head>
-</head>
-<body>
-<h4>
-Binary 2 Dec converter
-</h4>
-<form>
-<input type="number" id="bin"/>
-<input type="button" value="convert" onclick="bin2dec()"/>
-</form>
-<script type="text/javascript">
-   function bin2dec(){
-       var bin=document.grtElementById('bin').value;
-    var decimal=0;
-    for(var i=bin.length-1;i>=0;i--){
-        decimal += Math.pow(2,bin.length-1-i);
-    }
-    return(decimal); 
-   }
-   document.write(decimal);
-</script>
-</body>
+  <head> </head>
+  <body>
+    <h4>
+      Binary 2 Dec converter
+    </h4>
+    <form>
+      <input id="bin" type="text" maxlength="8"/>
+      <input type="button" value="convert" onclick="bin2dec()" />
+    </form>
+    <script type="text/javascript">
+      document.getElementById("bin").addEventListener(
+        "keydown",
+        function(ev) {
+          if (ev.keyCode != 48 && ev.keyCode != 96 && ev.keyCode != 49  && ev.keyCode != 97 && ev.keyCode != 8) {
+            alert("please enter binary digits only");
+            ev.preventDefault();
+          }
+        },
+        false
+      );
+      function bin2dec() {
+        var bin = document.getElementById("bin").value;
+        console.log(bin);
+        //to be done
+        // var decimal = 0;
+        // for (var i = bin.length - 1; i >= 0; i--) {
+        //   decimal += Math.pow(2, bin.length - 1 - i);
+        // }
+        // return decimal;
+      }
+      //   document.write(decimal);
+    </script>
+  </body>
 </html>
 <script type="text/javascript">
-    if(num!=0 || num!=1){
-        alert('please enter binary digits only');
-    }
-    </script>
+  //   if (num != 0 || num != 1) {
+  //     alert("please enter binary digits only");
+  //   }
+</script>
